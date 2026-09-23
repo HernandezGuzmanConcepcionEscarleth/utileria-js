@@ -1,9 +1,14 @@
-Actividad 2_Utileria-js
+## Actividad 2_Utileria-js
 Repositorio de la Actividad 2, con ejercicios js, css.
 
 Utileria.js es una pequeña librería desarrollada con **JavaScript**, creada para facilitar la revisión de información que un usuario escribe dentro de un formulario.
 
 El proyecto permite comprobar datos como correos, nombres y contraseñas. También incluye herramientas para calcular la edad, identificar si una persona es mayor de edad, darle formato a un número telefónico y conocer la fortaleza de una contraseña.
+## Instalación
+Descarga js/utileria.jse incluyelo antes de tu propio guión:
+
+<script src="js/utileria.js"></script>
+Las funciones quedan disponibles globalmente.
 
 ## Funciones disponibles
 
