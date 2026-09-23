@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+    <title>Formulario - Utileria JS</title>
+
+    <link rel="stylesheet" href="CSS/styles.css">
+
+</head>
+
+
+<body>
+
+
+    <form id="formPricipal">
+
+
+        <label>Nombre:</label>
+
+        <input
+            type="text"
+            id="nombre"
+            placeholder="Escarleth">
+
+        <span
+            id="errorNombre"
+            class="error">
+        </span>
+
+
+        <label>Correo:</label>
+
+        <input
+            type="email"
+            id="correo"
+            placeholder="Escarleth@gmail.com">
+
+        <span
+            id="errorCorreo"
+            class="error">
+        </span>
+
+
+        <label>Fecha de nacimiento:</label>
+
+        <input
+            type="date"
+            id="fechaNacimiento">
+
+        <span
+            id="errorFecha"
+            class="error">
+        </span>
+
+
+        <label>Ciudad de origen:</label>
+
+        <input
+            type="text"
+            id="ciudad"
+            placeholder="Oaxaca">
+
+        <span
+            id="errorCiudad"
+            class="error">
+        </span>
+
+
+        <label>Telefono:</label>
+
+        <input
+            type="text"
+            id="telefono"
+            placeholder="9511234567">
+
+
+        <button type="submit">
+            Enviar
+        </button>
+
+
+    </form>
+
+
+
+    <!-- VENTANA MODAL -->
+
+    <dialog id="modalEdad">
+
+
+        <p>
+
+            Tu edad es:
+
+            <strong id="edadResultado"></strong>
+
+        </p>
+
+
+        <p>
+
+            Mayor de edad?
+
+            <strong id="mayorEdadResultado"></strong>
+
+        </p>
+
+
+        <p>
+
+            Telefono formateado:
+
+            <strong id="telefonoResultado"></strong>
+
+        </p>
+
+
+        <button
+            type="button"
+            id="cerrarModal">
+
+            Cerrar
+
+        </button>
+
+
+    </dialog>
+
+
+
+    <!-- LIBRERIA JAVASCRIPT -->
+
+    <script src="JS/utileria.js"></script>
+
+
+
+    <script>
+
+        const form =
+            document.getElementById("formPricipal");
+
+        const modal =
+            document.getElementById("modalEdad");
+
+
+        // Evento del formulario
+        form.addEventListener("submit", function(event) {
+
+
+            // Evitar que la pagina se recargue
+            event.preventDefault();
+
+
+            // Obtener los datos
+            const nombre =
+                document.getElementById("nombre").value;
+
+            const correo =
+                document.getElementById("correo").value;
+
+            const fecha =
+                document.getElementById("fechaNacimiento").value;
+
+            const ciudad =
+                document.getElementById("ciudad").value;
+
+            const telefono =
+                document.getElementById("telefono").value;
+
+
+            let valido = true;
+
+
+
+            // VALIDAR NOMBRE
+
+            if (!soloLetras(nombre)) {
+
+                document.getElementById("errorNombre").textContent =
+                    "Solo letras permitidas";
+
+                valido = false;
+
+            } else {
+
+                document.getElementById("errorNombre").textContent =
+                    "";
+            }
+
+
+
+            // VALIDAR CORREO
+
+            if (!validarCorreo(correo)) {
+
+                document.getElementById("errorCorreo").textContent =
+                    "Correo invalido";
+
+                valido = false;
+
+            } else {
+
+                document.getElementById("errorCorreo").textContent =
+                    "";
+            }
+
+
+
+            // VALIDAR FECHA
+
+            if (fecha === "") {
+
+                document.getElementById("errorFecha").textContent =
+                    "Selecciona tu fecha de nacimiento";
+
+                valido = false;
+
+            } else {
+
+                document.getElementById("errorFecha").textContent =
+                    "";
+            }
+
+
+
+            // VALIDAR CIUDAD
+
+            if (!soloLetras(ciudad)) {
+
+                document.getElementById("errorCiudad").textContent =
+                    "Solo letras permitidas";
+
+                valido = false;
+
+            } else {
+
+                document.getElementById("errorCiudad").textContent =
+                    "";
+            }
+
+
+
+            // Si hay errores no continuar
+            if (!valido) {
+
+                return;
+            }
+
+
+
+            // CALCULAR EDAD
+
+            const edad =
+                calcularEdad(fecha);
+
+
+
+            // MOSTRAR EDAD
+
+            document.getElementById("edadResultado").textContent =
+                edad;
+
+
+
+            // MOSTRAR SI ES MAYOR DE EDAD
+
+            document.getElementById("mayorEdadResultado").textContent =
+                esMayorDeEdad(fecha) ? "Si" : "No";
+
+
+
+            // FORMATEAR TELEFONO
+
+            document.getElementById("telefonoResultado").textContent =
+                formatearTelefono(telefono);
+
+
+
+            // ABRIR MODAL
+
+            modal.showModal();
+
+
+        });
+
+
+
+        // CERRAR MODAL
+
+        document.getElementById("cerrarModal")
+        .addEventListener("click", function() {
+
+            modal.close();
+
+        });
+
+
+    </script>
+
+
+</body>
+
+</html>

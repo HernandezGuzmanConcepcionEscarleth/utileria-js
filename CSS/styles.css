@@ -1,0 +1,260 @@
+/* Quitar espacios predeterminados */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Estilo general de la pagina */
+body {
+    font-family: Arial, sans-serif;
+
+    background: linear-gradient(135deg, #e8eef5, #cfd9e6);
+
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px;
+}
+
+
+/* Formulario principal y formulario Login */
+#formPricipal,
+#formLogin {
+    width: 100%;
+    max-width: 450px;
+
+    background-color: white;
+
+    padding: 40px 35px;
+
+    border-radius: 15px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Etiquetas de los formularios */
+#formPricipal label,
+#formLogin label {
+    display: block;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    color: #333;
+
+    margin-top: 18px;
+    margin-bottom: 7px;
+}
+
+
+/* Primera etiqueta */
+#formPricipal label:first-child,
+#formLogin label:first-child {
+    margin-top: 0;
+}
+
+
+/* Campos de los formularios */
+#formPricipal input,
+#formLogin input {
+    width: 100%;
+
+    padding: 12px 14px;
+
+    border: 1px solid #ccc;
+    border-radius: 8px;
+
+    font-size: 15px;
+
+    outline: none;
+
+    transition: 0.3s;
+}
+
+
+/* Efecto cuando seleccionamos un campo */
+#formPricipal input:focus,
+#formLogin input:focus {
+    border-color: #4a6fa5;
+
+    box-shadow: 0 0 0 3px rgba(74, 111, 165, 0.15);
+}
+
+
+/* Texto de ejemplo de los campos */
+#formPricipal input::placeholder,
+#formLogin input::placeholder {
+    color: #aaa;
+}
+
+
+/* Mensajes de error */
+.error {
+    display: block;
+
+    color: #d9534f;
+
+    font-size: 13px;
+
+    margin-top: 5px;
+}
+
+
+/* Fortaleza de la contraseña */
+#FortaContrasena {
+    display: block;
+
+    color: #666;
+
+    font-size: 13px;
+
+    margin-top: 7px;
+}
+
+
+/* Botones de los formularios */
+#formPricipal button,
+#formLogin button {
+    width: 100%;
+
+    margin-top: 25px;
+
+    padding: 12px;
+
+    border: none;
+    border-radius: 8px;
+
+    background-color: #354f72;
+
+    color: white;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+/* Efecto cuando pasamos el mouse por el boton */
+#formPricipal button:hover,
+#formLogin button:hover {
+    background-color: #263b56;
+
+    transform: translateY(-2px);
+}
+
+
+/* Mensaje del Login */
+#mensajeLogin {
+    width: 100%;
+    max-width: 450px;
+
+    margin-top: 15px;
+
+    text-align: center;
+
+    color: #218838;
+
+    font-size: 15px;
+    font-weight: bold;
+}
+
+
+/* Ventana modal del formulario */
+#modalEdad {
+    width: 90%;
+    max-width: 400px;
+
+    padding: 30px;
+
+    border: none;
+    border-radius: 15px;
+
+    background-color: white;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+
+/* Fondo que aparece al abrir el modal */
+#modalEdad::backdrop {
+    background-color: rgba(0, 0, 0, 0.55);
+}
+
+
+/* Texto del modal */
+#modalEdad p {
+    color: #444;
+
+    font-size: 16px;
+
+    margin-bottom: 15px;
+
+    line-height: 1.5;
+}
+
+
+/* Resultado dentro del modal */
+#modalEdad strong {
+    color: #354f72;
+}
+
+
+/* Boton cerrar del modal */
+#cerrarModal {
+    width: 100%;
+
+    margin-top: 15px;
+
+    padding: 12px;
+
+    border: none;
+    border-radius: 8px;
+
+    background-color: #354f72;
+
+    color: white;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+/* Efecto del boton cerrar */
+#cerrarModal:hover {
+    background-color: #263b56;
+
+    transform: translateY(-2px);
+}
+
+
+/* Adaptacion para celulares */
+@media (max-width: 500px) {
+
+    body {
+        padding: 15px;
+    }
+
+    #formPricipal,
+    #formLogin {
+        padding: 30px 20px;
+    }
+
+    #modalEdad {
+        padding: 25px 20px;
+    }
+}

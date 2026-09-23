@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+    <title>Login - UTILERIA JS</title>
+
+    <link rel="stylesheet" href="CSS/styles.css">
+
+</head>
+
+
+<body>
+
+
+    <form id="formLogin">
+
+
+        <label>Correo:</label>
+
+        <input
+            type="email"
+            id="loginCorreo"
+            placeholder="123@gmail.com">
+
+        <span
+            id="errorLoginCorreo"
+            class="error">
+        </span>
+
+
+
+        <label>Contraseña:</label>
+
+        <input
+            type="password"
+            id="loginContrasena"
+            placeholder="Ingresa tu contraseña">
+
+
+        <span id="fortalezaContrasena"></span>
+
+
+        <span
+            id="errorLoginContrasena"
+            class="error">
+        </span>
+
+
+
+        <button type="submit">
+            Ingresar
+        </button>
+
+
+    </form>
+
+
+
+    <p id="mensajeLogin"></p>
+
+
+
+    <!-- LIBRERIA JAVASCRIPT -->
+
+    <script src="JS/utileria.js"></script>
+
+
+
+    <script>
+
+
+        // Obtener contraseña
+
+        const inputContrasena =
+            document.getElementById("loginContrasena");
+
+
+        // Lugar donde se muestra la fortaleza
+
+        const spanFortaleza =
+            document.getElementById("fortalezaContrasena");
+
+
+
+        // MEDIR FORTALEZA DE CONTRASEÑA
+
+        inputContrasena.addEventListener("input", function() {
+
+
+            spanFortaleza.textContent =
+                "Fortaleza: " +
+                medirFortalezaContrasena(
+                    inputContrasena.value
+                );
+
+
+        });
+
+
+
+        // VALIDAR LOGIN
+
+        document.getElementById("formLogin")
+        .addEventListener("submit", function(event) {
+
+
+            // Evitar que se recargue la pagina
+
+            event.preventDefault();
+
+
+
+            // Obtener datos
+
+            const correo =
+                document.getElementById("loginCorreo").value;
+
+
+            const password =
+                inputContrasena.value;
+
+
+            let valido = true;
+
+
+
+            // VALIDAR CORREO
+
+            if (!validarCorreo(correo)) {
+
+
+                document.getElementById("errorLoginCorreo").textContent =
+                    "Correo invalido";
+
+
+                valido = false;
+
+
+            } else {
+
+
+                document.getElementById("errorLoginCorreo").textContent =
+                    "";
+
+            }
+
+
+
+            // VALIDAR CONTRASEÑA
+
+            if (!validarPassword(password)) {
+
+
+                document.getElementById("errorLoginContrasena").textContent =
+                    "No cumple los requisitos";
+
+
+                valido = false;
+
+
+            } else {
+
+
+                document.getElementById("errorLoginContrasena").textContent =
+                    "";
+
+            }
+
+
+
+            // SI TODO ES CORRECTO
+
+            if (valido) {
+
+
+                document.getElementById("mensajeLogin").textContent =
+                    "Login exitoso";
+
+
+                // Mandar al formulario
+
+                window.location.href = "index.html";
+
+
+            }
+
+
+        });
+
+
+    </script>
+
+
+</body>
+
+</html>
