@@ -5,10 +5,13 @@ Utileria.js es una pequeña librería desarrollada con **JavaScript**, creada pa
 
 El proyecto permite comprobar datos como correos, nombres y contraseñas. También incluye herramientas para calcular la edad, identificar si una persona es mayor de edad, darle formato a un número telefónico y conocer la fortaleza de una contraseña.
 ## Instalación
-Descarga ´´js/utileria.jse´´ inclúyelo antes de tu propio guión:
 
-´´´<script src="js/utileria.js"></script>
-´´´
+Descarga `js/utileria.js` e inclúyelo antes de tu propio guión:
+
+```html
+<script src="js/utileria.js"></script>
+```
+
 Las funciones quedan disponibles globalmente.
 
 ## Funciones disponibles
