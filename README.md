@@ -7,7 +7,8 @@ El proyecto permite comprobar datos como correos, nombres y contraseñas. Tambi�
 ## Instalación
 Descarga ´´js/utileria.jse´´ inclúyelo antes de tu propio guión:
 
-´´´<script src="js/utileria.js"></script>´´´
+´´´<script src="js/utileria.js"></script>
+´´´
 Las funciones quedan disponibles globalmente.
 
 ## Funciones disponibles
