@@ -1,4 +1,4 @@
-## Actividad 2_Utileria-js
+<img width="2554" height="1498" alt="Captura de pantalla 2026-09-24 180420" src="https://github.com/user-attachments/assets/a661733d-135d-460f-9a9f-33cdd31fa2a3" />## Actividad 2_Utileria-js
 Repositorio de la Actividad 2, con ejercicios js, css.
 
 Utileria.js es una pequeña librería desarrollada con **JavaScript**, creada para facilitar la revisión de información que un usuario escribe dentro de un formulario.
@@ -120,8 +120,31 @@ La librería se integró en dos páginas principales. En `login.html` se valida 
 
 En `index.html` se solicitan datos como nombre, correo, fecha de nacimiento, ciudad de origen y teléfono. Después de validar la información, se abre una ventana modal donde se muestra la edad calculada, si la persona es mayor de edad y el teléfono con formato.
 ## Capturas
-Consola(Funciones)
+Consola(Funciones Obligatorias)
 <img width="2558" height="1508" alt="Captura de pantalla 2026-09-24 175948" src="https://github.com/user-attachments/assets/18223a3a-fc24-419b-bc32-161206b3d6d9" />
+
+Consola(Funciones Propias)
+<img width="2558" height="1494" alt="Captura de pantalla 2026-09-24 180623" src="https://github.com/user-attachments/assets/779ad172-b769-418c-ba98-bc00f6b215fb" />
+<img width="2558" height="1494" alt="Captura de pantalla 2026-09-24 180623" src="https://github.com/user-attachments/assets/d4324276-cf6c-4932-8764-d8f1faf30d47" />
+
+Registro(Modal)
+<img width="1288" height="1462" alt="Captura de pantalla 2026-09-24 181215" src="https://github.com/user-attachments/assets/aa71227a-0cac-4ddb-83c7-23ec387d8752" />
+
+Login
+<img width="1084" height="1004" alt="Captura de pantalla 2026-09-24 181329" src="https://github.com/user-attachments/assets/46dfb51f-554d-46b2-a987-e7f2639155a9" />
+
+
+## Video
+
+## Autor: 
+https://github.com/HernandezGuzmanConcepcionEscarleth/utileria-js
+
+
+
+
+
+
+
 
 
 
