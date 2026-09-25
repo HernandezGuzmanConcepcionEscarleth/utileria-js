@@ -1,4 +1,4 @@
-<img width="2554" height="1498" alt="Captura de pantalla 2026-09-24 180420" src="https://github.com/user-attachments/assets/a661733d-135d-460f-9a9f-33cdd31fa2a3" />## Actividad 2_Utileria-js
+## Actividad 2_Utileria-js
 Repositorio de la Actividad 2, con ejercicios js, css.
 
 Utileria.js es una pequeña librería desarrollada con **JavaScript**, creada para facilitar la revisión de información que un usuario escribe dentro de un formulario.
