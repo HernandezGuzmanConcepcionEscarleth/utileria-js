@@ -128,11 +128,11 @@ Consola(Funciones Obligatorias)
 
 Consola(Funciones Propias)
 <img width="2558" height="1494" alt="Captura de pantalla 2026-09-24 180623" src="https://github.com/user-attachments/assets/779ad172-b769-418c-ba98-bc00f6b215fb" />
+<img width="2558" height="1496" alt="Captura de pantalla 2026-09-24 180921" src="https://github.com/user-attachments/assets/4ae491cd-3717-4b98-a540-c6cf8ea80c4a" />
 
 
 Registro(Modal)
 <img width="1288" height="1462" alt="Captura de pantalla 2026-09-24 181215" src="https://github.com/user-attachments/assets/aa71227a-0cac-4ddb-83c7-23ec387d8752" />
-<img width="2558" height="1496" alt="Captura de pantalla 2026-09-24 180921" src="https://github.com/user-attachments/assets/0714c4aa-2731-467b-afb4-01db6822db36" />
 
 
 Login
