@@ -4,6 +4,7 @@ Repositorio de la Actividad 2, con ejercicios js, css.
 Utileria.js es una pequeña librería desarrollada con **JavaScript**, creada para facilitar la revisión de información que un usuario escribe dentro de un formulario.
 
 El proyecto permite comprobar datos como correos, nombres y contraseñas. También incluye herramientas para calcular la edad, identificar si una persona es mayor de edad, darle formato a un número telefónico y conocer la fortaleza de una contraseña.
+Demo en vivo: https://hernandezguzmanconcepcionescarleth.github.io/utileria-js/
 ## Instalación
 
 Descarga `js/utileria.js` e inclúyelo antes de tu propio guión:
@@ -118,4 +119,9 @@ Esta función se ejecuta mientras el usuario escribe su contraseña en el login.
 La librería se integró en dos páginas principales. En `login.html` se valida que el correo y la contraseña tengan un formato correcto. Cuando los datos cumplen las condiciones, el usuario puede continuar al formulario.
 
 En `index.html` se solicitan datos como nombre, correo, fecha de nacimiento, ciudad de origen y teléfono. Después de validar la información, se abre una ventana modal donde se muestra la edad calculada, si la persona es mayor de edad y el teléfono con formato.
+## Capturas
+Consola(Funciones)
+<img width="2558" height="1508" alt="Captura de pantalla 2026-09-24 175948" src="https://github.com/user-attachments/assets/18223a3a-fc24-419b-bc32-161206b3d6d9" />
+
+
 
