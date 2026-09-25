@@ -142,7 +142,7 @@ Login
 
 
 ## Video Demostrativo
-https://youtu.be/31EpdmErtuk?si=ux7IkUJ5UIIu9ZYx
+
 
 ## Autor: 
 https://github.com/HernandezGuzmanConcepcionEscarleth/utileria-js
