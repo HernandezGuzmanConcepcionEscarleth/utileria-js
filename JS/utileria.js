@@ -63,7 +63,8 @@ function calcularEdad(fechaNacimiento) {
     // obtengo la fecha actual
     const hoy = new Date();
 
-    // primero calculo la diferencia entre el año actual y el año de nacimiento
+    // primero calculo la diferencia entre el año actual
+    // y el año de nacimiento
     let edad =
         hoy.getFullYear() - nacimiento.getFullYear();
 
@@ -105,7 +106,7 @@ function validarPassword(password) {
 
     // debe tener minimo 8 caracteres
     // tambien debe tener una minuscula, una mayuscula,
-// un numero y un caracter especial
+    // un numero y un caracter especial
     const regex =
         /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^a-zA-Z0-9]).{8,}$/;
 
@@ -117,7 +118,8 @@ function validarPassword(password) {
 
 // formatear numero telefonico
 // esta es mi primera funcion agregada
-// la invente para que el numero de telefono se muestre de una forma mas ordenada
+// la invente para que el numero de telefono
+// se muestre de una forma mas ordenada
 function formatearTelefono(numero) {
 
     // elimina cualquier cosa que no sea un numero
@@ -133,7 +135,7 @@ function formatearTelefono(numero) {
 
     // separo el telefono para mostrarlo de esta forma:
     // (951) 123-4567
-    return `(${soloDigitos.slice(0,3)}) ${soloDigitos.slice(3,6)}-${soloDigitos.slice(6)}`;
+    return `(${soloDigitos.slice(0, 3)}) ${soloDigitos.slice(3, 6)}-${soloDigitos.slice(6)}`;
 }
 
 
@@ -187,137 +189,152 @@ function medirFortalezaContrasena(contrasena) {
 document.addEventListener("DOMContentLoaded", function () {
 
     // busco mi formulario por medio de su id
-    const formulario = document.getElementById("formPricipal");
+    const formulario =
+        document.getElementById("formPricipal");
 
-    // este evento se ejecuta cuando presiono el boton enviar
-    formulario.addEventListener("submit", function (event) {
+    // reviso primero si el formulario existe en la pagina
+    // esto evita errores cuando utilizo la libreria
+    // en otras paginas como pruebaCDN.html
+    if (formulario) {
 
-        // evita que el formulario se envie o recargue inmediatamente
-        // primero quiero revisar que los datos sean correctos
-        event.preventDefault();
+        // este evento se ejecuta cuando presiono el boton enviar
+        formulario.addEventListener("submit", function (event) {
 
-
-        // obtengo lo que escribio el usuario en el nombre
-        const nombre =
-            document.getElementById("nombre").value;
-
-        // obtengo el correo
-        const correo =
-            document.getElementById("correo").value;
-
-        // obtengo la fecha de nacimiento
-        const fechaNacimiento =
-            document.getElementById("fechaNacimiento").value;
-
-        // obtengo el telefono
-        const telefono =
-            document.getElementById("telefono").value;
-
-        // obtengo la contraseña
-        const password =
-            document.getElementById("password").value;
+            // evita que el formulario se envie
+            // o recargue inmediatamente
+            event.preventDefault();
 
 
+            // obtengo lo que escribio el usuario en el nombre
+            const nombre =
+                document.getElementById("nombre").value;
 
-        // valido el nombre usando mi funcion soloLetras
-        if (!soloLetras(nombre)) {
+            // obtengo el correo
+            const correo =
+                document.getElementById("correo").value;
 
-            // si contiene numeros o simbolos muestro este mensaje
-            document.getElementById("errorNombre").textContent =
-                "El nombre solo debe contener letras";
+            // obtengo la fecha de nacimiento
+            const fechaNacimiento =
+                document.getElementById("fechaNacimiento").value;
 
-            // return detiene la validacion
-            return;
-        }
+            // obtengo el telefono
+            const telefono =
+                document.getElementById("telefono").value;
 
-        // si esta correcto limpio el mensaje de error
-        document.getElementById("errorNombre").textContent = "";
+            // obtengo la contraseña
+            const password =
+                document.getElementById("password").value;
 
 
 
-        // valido el correo usando mi funcion validarCorreo
-        if (!validarCorreo(correo)) {
+            // valido el nombre usando mi funcion soloLetras
+            if (!soloLetras(nombre)) {
 
-            document.getElementById("errorCorreo").textContent =
-                "Ingresa un correo valido";
+                // si contiene numeros o simbolos muestro este mensaje
+                document.getElementById("errorNombre").textContent =
+                    "El nombre solo debe contener letras";
 
-            return;
-        }
+                // return detiene la validacion
+                return;
+            }
 
-        document.getElementById("errorCorreo").textContent = "";
-
-
-
-        // reviso que el usuario haya seleccionado una fecha
-        if (fechaNacimiento === "") {
-
-            alert("Ingresa tu fecha de nacimiento");
-
-            return;
-        }
+            // si esta correcto limpio el mensaje de error
+            document.getElementById("errorNombre").textContent = "";
 
 
 
-        // llamo a mi funcion para calcular la edad
-        // guardo el resultado en la variable edad
-        const edad = calcularEdad(fechaNacimiento);
+            // valido el correo usando mi funcion validarCorreo
+            if (!validarCorreo(correo)) {
+
+                document.getElementById("errorCorreo").textContent =
+                    "Ingresa un correo valido";
+
+                return;
+            }
+
+            document.getElementById("errorCorreo").textContent = "";
 
 
 
-        // uso mi funcion para revisar que tenga minimo 18 años
-        if (!esMayorDeEdad(fechaNacimiento)) {
+            // reviso que el usuario haya seleccionado una fecha
+            if (fechaNacimiento === "") {
 
-            alert("Debes ser mayor de edad");
+                alert("Ingresa tu fecha de nacimiento");
 
-            return;
-        }
-
-
-
-        // uso validarLongitud para comprobar que el telefono tenga 10 digitos
-        if (!validarLongitud(telefono, 10)) {
-
-            alert("El telefono debe tener 10 digitos");
-
-            return;
-        }
+                return;
+            }
 
 
 
-        // uso mi primera funcion agregada
-        // convierte por ejemplo 9511234567 en (951) 123-4567
-        const telefonoFormateado =
-            formatearTelefono(telefono);
+            // llamo a mi funcion para calcular la edad
+            // guardo el resultado en la variable edad
+            const edad =
+                calcularEdad(fechaNacimiento);
 
 
 
-        // reviso que la contraseña cumpla con todos los requisitos
-        if (!validarPassword(password)) {
+            // uso mi funcion para revisar que tenga minimo 18 años
+            if (!esMayorDeEdad(fechaNacimiento)) {
 
+                alert("Debes ser mayor de edad");
+
+                return;
+            }
+
+
+
+            // uso validarLongitud para comprobar
+            // que el telefono tenga 10 digitos
+            if (!validarLongitud(telefono, 10)) {
+
+                alert("El telefono debe tener 10 digitos");
+
+                return;
+            }
+
+
+
+            // uso mi primera funcion agregada
+            // convierte por ejemplo:
+            // 9511234567 en (951) 123-4567
+            const telefonoFormateado =
+                formatearTelefono(telefono);
+
+
+
+            // reviso que la contraseña cumpla
+            // con todos los requisitos
+            if (!validarPassword(password)) {
+
+                alert(
+                    "La contraseña debe tener minimo 8 caracteres, " +
+                    "una mayuscula, una minuscula, " +
+                    "un numero y un caracter especial"
+                );
+
+                return;
+            }
+
+
+
+            // uso mi segunda funcion agregada
+            // el resultado puede ser debil, media o fuerte
+            const fortaleza =
+                medirFortalezaContrasena(password);
+
+
+
+            // si todos los datos son correctos
+            // muestro los resultados
             alert(
-                "La contraseña debe tener minimo 8 caracteres, una mayuscula, una minuscula, un numero y un caracter especial"
+                "Datos correctos" +
+                "\nEdad: " + edad +
+                "\nTelefono: " + telefonoFormateado +
+                "\nFortaleza de contraseña: " + fortaleza
             );
 
-            return;
-        }
+        });
 
+    }
 
-
-        // uso mi segunda funcion agregada
-        // el resultado puede ser debil, media o fuerte
-        const fortaleza =
-            medirFortalezaContrasena(password);
-
-
-
-        // si todos los datos son correctos muestro los resultados
-        alert(
-            "Datos correctos" +
-            "\nEdad: " + edad +
-            "\nTelefono: " + telefonoFormateado +
-            "\nFortaleza de contraseña: " + fortaleza
-        );
-
-    });
-
-}); 
+});
